@@ -122,7 +122,7 @@ export function Hero() {
             initial={{ opacity: 0, x: -24, y: 24 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
             transition={{ duration: 0.7, ease: easing, delay: 0.8 }}
-            className="animate-float glass absolute -bottom-6 -left-4 flex items-center gap-4 rounded-2xl border border-gold/30 p-4 shadow-xl sm:-left-8"
+            className="animate-float bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 absolute -bottom-6 -left-4 flex items-center gap-4 rounded-2xl border border-gold/30 p-4 shadow-xl sm:-left-8"
           >
             <div className="flex flex-col">
               <div className="flex items-center gap-0.5 text-gold">
@@ -144,7 +144,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.75 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: easing, delay: 1.0 }}
-            className="absolute -right-3 top-10 rounded-2xl border border-border glass px-4 py-3 text-center shadow-lg sm:-right-7"
+            className="absolute -right-3 top-10 rounded-2xl border border-border bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 px-4 py-3 text-center shadow-lg sm:-right-7"
           >
             <p className="font-serif text-2xl font-bold text-primary">99%</p>
             <p className="text-[11px] text-muted-foreground">Success Rate</p>
@@ -155,7 +155,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.75 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: easing, delay: 1.15 }}
-            className="glass absolute left-4 top-6 flex items-center gap-2 rounded-xl border border-primary/20 px-3 py-2 shadow-md sm:left-6"
+            className="bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 absolute left-4 top-6 flex items-center gap-2 rounded-xl border border-primary/20 px-3 py-2 shadow-md sm:left-6"
           >
             <ShieldCheck className="h-4 w-4 text-primary" />
             <span className="text-xs font-semibold text-foreground">JCI Accredited</span>

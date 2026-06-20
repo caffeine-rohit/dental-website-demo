@@ -39,7 +39,7 @@ export function Navbar() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-500',
         scrolled
-          ? 'glass border-b border-border/60 py-3 shadow-[0_8px_30px_-12px_rgba(13,107,71,0.2)]'
+          ? 'bg-white/65 backdrop-blur-2xl border-b border-border/60 py-3 shadow-[0_8px_30px_-12px_rgba(13,107,71,0.2)]'
           : 'border-b border-transparent py-5',
       )}
     >
@@ -100,7 +100,7 @@ export function Navbar() {
                   transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
                   onMouseEnter={() => setServicesOpen(true)}
                   onMouseLeave={() => setServicesOpen(false)}
-                  className="absolute left-0 top-full mt-2 min-w-[220px] overflow-hidden rounded-2xl border border-border glass shadow-[0_20px_50px_-15px_rgba(0,0,0,0.15)]"
+                  className="absolute left-0 top-full mt-2 min-w-[220px] overflow-hidden rounded-2xl border border-border bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.15)]"
                 >
                   {SERVICES.map((s) => (
                     <Link

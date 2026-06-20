@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { SectionHeading } from '@/components/section-heading'
@@ -27,13 +28,28 @@ export function ServicesSection() {
                   <motion.article
                     whileHover={{ y: -6 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-                    className="luxury-card relative flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card p-7 shadow-sm transition-all hover:border-primary/30"
+                    className="luxury-card relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
                   >
-                    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                      <Icon className="h-7 w-7" />
-                    </span>
-                    <div className="mt-6 flex flex-1 flex-col gap-3">
-                      <h3 className="font-serif text-2xl font-semibold text-foreground">{service.name}</h3>
+                    {/* Service image */}
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 400px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      {/* Green overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                      {/* Icon bubble */}
+                      <span className="absolute bottom-3 left-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-md">
+                        <Icon className="h-5 w-5 text-primary" />
+                      </span>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex flex-1 flex-col gap-3 p-6">
+                      <h3 className="font-serif text-xl font-semibold text-foreground">{service.name}</h3>
                       <p className="text-sm leading-relaxed text-muted-foreground flex-1">
                         {service.short}
                       </p>

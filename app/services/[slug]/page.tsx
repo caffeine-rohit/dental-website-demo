@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowRight, Check, Phone } from 'lucide-react'
@@ -49,12 +50,21 @@ export default async function ServiceDetailPage({
 
       {/* Overview */}
       <section className="py-20 sm:py-24">
-        <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
-          <FadeIn>
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2">
+          <FadeIn className="order-2 overflow-hidden rounded-3xl border border-border lg:order-1">
+            <Image
+              src={service.image}
+              alt={`${service.name} treatment`}
+              width={900}
+              height={700}
+              className="h-full w-full object-cover"
+            />
+          </FadeIn>
+          <FadeIn delay={0.1} className="order-1 lg:order-2">
             <span className="label text-xs text-primary">Overview</span>
             <h2 className="mt-3 font-serif text-3xl font-semibold text-foreground">About {service.name}</h2>
             <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">{service.about}</p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href="/contact#book"
                 className="inline-flex items-center gap-2 rounded-full border border-gold bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110"

@@ -27,7 +27,7 @@ export function StickyBar() {
           transition={{ type: 'spring', stiffness: 260, damping: 28 }}
           className="fixed inset-x-3 bottom-3 z-50 sm:inset-x-auto sm:right-5 sm:bottom-5 sm:max-w-sm"
         >
-          <div className="glass flex items-center gap-3 rounded-2xl border border-primary/20 bg-card p-3 shadow-[0_20px_50px_-15px_rgba(13,107,71,0.4)]">
+          <div className="flex items-center gap-3 rounded-2xl border border-primary/20 bg-white/65 p-3 shadow-[0_20px_50px_-15px_rgba(13,107,71,0.4)] backdrop-blur-2xl">
             {/* Text */}
             <div className="hidden flex-1 pl-2 sm:block">
               <p className="text-xs text-muted-foreground">Ready for your transformation?</p>

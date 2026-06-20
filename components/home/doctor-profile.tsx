@@ -31,7 +31,7 @@ export function DoctorProfile() {
           </div>
 
           {/* FICOI badge */}
-          <div className="glass absolute -bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-2xl border border-gold/30 px-5 py-3 shadow-xl">
+          <div className="bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 absolute -bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-3 rounded-2xl border border-gold/30 px-5 py-3 shadow-xl">
             <Award className="h-5 w-5 text-gold" />
             <span className="whitespace-nowrap text-sm font-semibold text-foreground">FICOI Certified Implantologist</span>
           </div>
@@ -43,7 +43,7 @@ export function DoctorProfile() {
           </div>
 
           {/* Lagos badge */}
-          <div className="glass absolute left-4 top-6 flex items-center gap-2 rounded-xl border border-border px-3 py-2 shadow-md sm:left-0">
+          <div className="bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 absolute left-4 top-6 flex items-center gap-2 rounded-xl border border-border px-3 py-2 shadow-md sm:left-0">
             <MapPin className="h-4 w-4 text-primary" />
             <span className="text-xs font-medium text-foreground">Victoria Island, Lagos</span>
           </div>

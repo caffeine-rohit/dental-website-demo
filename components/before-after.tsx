@@ -32,7 +32,7 @@ export function BeforeAfter({
     <div className={cn('flex flex-col gap-6', className)}>
       {/* Case selector tabs */}
       {cases.length > 1 && (
-        <div className="mx-auto flex flex-wrap items-center justify-center gap-2 rounded-full border border-border glass p-1.5 shadow-sm">
+        <div className="mx-auto flex flex-wrap items-center justify-center gap-2 rounded-full border border-border bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 p-1.5 shadow-sm">
           {cases.map((c, i) => (
             <button
               key={c.label}
@@ -93,7 +93,7 @@ export function BeforeAfter({
       </AnimatePresence>
 
       {/* Patient info */}
-      <div className="flex items-center justify-center gap-6 rounded-2xl border border-border glass px-6 py-4 shadow-sm">
+      <div className="flex items-center justify-center gap-6 rounded-2xl border border-border bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 px-6 py-4 shadow-sm">
         <div className="flex flex-col items-center gap-0.5">
           <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Patient</span>
           <span className="font-semibold text-foreground">{current.name}</span>
@@ -119,7 +119,7 @@ function Comparison({ data }: { data: BeforeAfterCase }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const dragging = useRef(false)
 
-  const clipPos = view === 'before' ? 0 : view === 'after' ? 100 : pos
+  const clipPos = view === 'before' ? 100 : view === 'after' ? 0 : pos
 
   const updateFromClientX = useCallback((clientX: number) => {
     const el = containerRef.current
@@ -208,7 +208,7 @@ function Comparison({ data }: { data: BeforeAfterCase }) {
       </div>
 
       {/* View toggle */}
-      <div className="mx-auto flex items-center gap-1 rounded-full border border-border glass p-1 shadow-sm">
+      <div className="mx-auto flex items-center gap-1 rounded-full border border-border bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 p-1 shadow-sm">
         {(['before', 'slider', 'after'] as const).map((v) => (
           <button
             key={v}

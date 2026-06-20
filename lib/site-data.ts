@@ -79,8 +79,7 @@ export const SERVICES: Service[] = [
       { q: 'How long do implants last?', a: 'With good oral hygiene, implants can last 25+ years and often a lifetime.' },
       { q: 'Do you offer payment plans?', a: 'Yes, we offer flexible payment plans and work with major health insurance providers across Nigeria and Ghana.' },
     ],
-    image:
-      'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/service-implants.png',
   },
   {
     slug: 'invisible-aligners',
@@ -108,8 +107,7 @@ export const SERVICES: Service[] = [
       { q: 'Are they noticeable?', a: 'Aligners are made from clear medical-grade material and are virtually invisible.' },
       { q: 'Can I eat with them?', a: 'You remove aligners to eat and drink, so there are no food restrictions.' },
     ],
-    image:
-      'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/service-aligners.png',
   },
   {
     slug: 'smile-design',
@@ -137,8 +135,7 @@ export const SERVICES: Service[] = [
       { q: 'How many visits?', a: 'Most smile makeovers complete in 2–3 comfortable visits.' },
       { q: 'Is it reversible?', a: 'We offer minimal-prep options that conserve your natural tooth structure.' },
     ],
-    image:
-      'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/service-smile-design.png',
   },
   {
     slug: 'porcelain-veneers',
@@ -166,8 +163,7 @@ export const SERVICES: Service[] = [
       { q: 'Do veneers look fake?', a: 'Not with ours. Our ceramists create bespoke, lifelike results.' },
       { q: 'Is the process painful?', a: 'Minimal preparation is done under local anaesthesia — very comfortable.' },
     ],
-    image:
-      'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/service-veneers.png',
   },
   {
     slug: 'teeth-whitening',
@@ -195,8 +191,7 @@ export const SERVICES: Service[] = [
       { q: 'How long does it last?', a: 'Results typically last 12–18 months with good maintenance.' },
       { q: 'Will it cause sensitivity?', a: 'We use advanced desensitising agents to keep you comfortable throughout.' },
     ],
-    image:
-      'https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/service-whitening.png',
   },
   {
     slug: 'full-mouth-rehabilitation',

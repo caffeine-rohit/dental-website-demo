@@ -31,7 +31,7 @@ export function Testimonials() {
           />
           {/* Rating pill */}
           <div className="mt-6 flex justify-center lg:absolute lg:right-0 lg:top-0 lg:mt-0">
-            <div className="glass flex items-center gap-3 rounded-full border border-gold/30 px-5 py-2.5 shadow-sm">
+            <div className="bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 flex items-center gap-3 rounded-full border border-gold/30 px-5 py-2.5 shadow-sm">
               <div className="flex text-gold">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-gold text-gold" />

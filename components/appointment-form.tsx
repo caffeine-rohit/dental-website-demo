@@ -64,7 +64,7 @@ export function AppointmentForm() {
   }
 
   return (
-    <div className="overflow-hidden rounded-3xl border border-border glass shadow-[0_30px_70px_-35px_rgba(11,110,110,0.4)]">
+    <div className="overflow-hidden rounded-3xl border border-border bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 shadow-[0_30px_70px_-35px_rgba(11,110,110,0.4)]">
       {/* Step indicator */}
       <div className="border-b border-border bg-secondary/40 px-6 py-6 sm:px-10">
         <div className="mx-auto flex max-w-lg items-center">

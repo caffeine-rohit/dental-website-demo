@@ -82,7 +82,7 @@ export function Technology() {
 
         {/* Bottom CTA */}
         <div className="mt-14 flex justify-center">
-          <div className="glass rounded-2xl border border-white/10 px-8 py-5 text-center">
+          <div className="bg-white/65 backdrop-blur-2xl supports-[backdrop-filter]:bg-white/65 rounded-2xl border border-white/10 px-8 py-5 text-center">
             <p className="text-sm text-white/70">
               The only private dental practice in West Africa with full{' '}
               <span className="font-semibold text-white">3D CBCT · CAD/CAM · Dental Microscope Suite</span>{' '}
