@@ -1,0 +1,219 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-heading: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+  --font-label: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-sky: var(--sky);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.4);
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.875rem;
+
+  /* Porcelain white background */
+  --background: oklch(0.988 0.002 180);
+  --foreground: oklch(0.16 0.02 200);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0.02 200);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.16 0.02 200);
+
+  /* Deep emerald green — premium medical */
+  --primary: oklch(0.43 0.12 161);
+  --primary-foreground: oklch(0.99 0.005 160);
+
+  --secondary: oklch(0.96 0.015 161);
+  --secondary-foreground: oklch(0.28 0.06 161);
+
+  --muted: oklch(0.965 0.008 200);
+  --muted-foreground: oklch(0.5 0.02 210);
+
+  /* Sky blue accent */
+  --sky: oklch(0.68 0.14 220);
+
+  /* Champagne gold */
+  --accent: oklch(0.76 0.10 90);
+  --accent-foreground: oklch(0.25 0.04 90);
+  --gold: oklch(0.76 0.10 90);
+  --gold-foreground: oklch(0.25 0.04 90);
+
+  --destructive: oklch(0.58 0.22 27);
+  --border: oklch(0.91 0.012 200);
+  --input: oklch(0.91 0.012 200);
+  --ring: oklch(0.43 0.12 161);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'ss01', 'cv01';
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@utility label {
+  font-family: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+
+/* === Glassmorphism === */
+.glass {
+  background: color-mix(in oklch, var(--card) 50%, transparent);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+}
+
+/* === Hero mesh gradient — light emerald/sky palette === */
+.mesh-bg {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(at 10% 0%, color-mix(in oklch, var(--primary) 10%, transparent) 0px, transparent 55%),
+    radial-gradient(at 90% 5%, color-mix(in oklch, var(--sky) 12%, transparent) 0px, transparent 50%),
+    radial-gradient(at 55% 85%, color-mix(in oklch, var(--gold) 8%, transparent) 0px, transparent 50%);
+}
+
+/* === Luxury card hover border glow === */
+.luxury-card {
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.luxury-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, color-mix(in oklch, var(--primary) 60%, transparent), color-mix(in oklch, var(--gold) 60%, transparent));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+.luxury-card:hover::before {
+  opacity: 1;
+}
+.luxury-card:hover {
+  box-shadow: 0 24px 60px -20px color-mix(in oklch, var(--primary) 30%, transparent);
+}
+
+/* === Section divider === */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+/* === Marquee animation === */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+/* === Shimmer glow (testimonials) === */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.shimmer-glow {
+  background: linear-gradient(
+    110deg,
+    color-mix(in oklch, var(--card) 70%, transparent) 30%,
+    color-mix(in oklch, var(--gold) 20%, transparent) 50%,
+    color-mix(in oklch, var(--card) 70%, transparent) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 7s ease-in-out infinite;
+}
+
+/* === Float animation for hero badge === */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* === Pulse ring for CTAs === */
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 40%, transparent); }
+  70% { box-shadow: 0 0 0 12px color-mix(in oklch, var(--primary) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 0%, transparent); }
+}
+.pulse-ring {
+  animation: pulse-ring 2.5s ease-out infinite;
+}
+
+/* === Sky blue tint section === */
+.sky-section {
+  background: linear-gradient(
+    160deg,
+    color-mix(in oklch, var(--sky) 6%, var(--background)) 0%,
+    var(--background) 60%
+  );
+}
+
+/* === Gradient text === */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, color-mix(in oklch, var(--sky) 80%, var(--primary)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === Decorative line above headings === */
+.heading-accent::before {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--gold));
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
