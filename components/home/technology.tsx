@@ -24,7 +24,7 @@ export function Technology() {
         <SectionHeading
           invert
           eyebrow="Innovation & Technology"
-          title="A Clinic Built for 2030"
+          title="A Clinic Built for the Future"
           description="Every diagnostic tool, treatment protocol and patient comfort system is engineered to the highest global standard — so you receive safer, faster and more precise care."
         />
 
