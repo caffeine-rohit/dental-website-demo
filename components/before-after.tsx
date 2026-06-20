@@ -148,7 +148,7 @@ function Comparison({ data }: { data: BeforeAfterCase }) {
       {/* Comparison image — tall and full-width */}
       <div
         ref={containerRef}
-        className="relative aspect-[16/9] w-full select-none overflow-hidden rounded-2xl border border-border bg-muted shadow-[0_30px_80px_-25px_rgba(13,107,71,0.35)] cursor-ew-resize"
+        className="relative aspect-[16/9] w-full select-none touch-none overflow-hidden rounded-2xl border border-border bg-muted shadow-[0_30px_80px_-25px_rgba(13,107,71,0.35)] cursor-ew-resize"
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
